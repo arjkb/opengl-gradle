@@ -16,7 +16,11 @@ void drawSquare(const GLfloat SIZE) {
 }
 
 void display(void)  {
-    return;
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+    drawSquare(5.0f);
+    glFlush();
+    glutSwapBuffers();
 }
 
 int main(int argc, char *argv[])    {
