@@ -6,6 +6,15 @@
 
 using namespace std;
 
+void drawSquare(const GLfloat SIZE) {
+    glBegin(GL_POLYGON);
+        glVertex3f(-SIDE, SIDE, 0);
+        glVertex3f(-SIDE, -SIDE, 0);
+        glVertex3f(SIDE, -SIDE, 0);
+        glVertex3f(SIDE, SIDE, 0);
+    glEnd();
+}
+
 void display(void)  {
     return;
 }
