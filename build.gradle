@@ -4,4 +4,13 @@ model   {
     components  {
         main(NativeExecutableSpec)
     }
+
+    binaries    {
+        all {
+            if (toolChain in Gcc)   {
+                cppCompiler.args "-c",  "-g"
+                linker.args "-lglfw", "-lglut", "-lGLU", "-lGL", "-lGLEW"
+            }
+        }
+    }
 }
