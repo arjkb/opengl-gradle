@@ -2,7 +2,7 @@
 #include "greeting.hpp"
 #include "GL/glew.h"
 #include "GL/freeglut.h"
-#include "draw.hpp"
+#include "myutil/draw.hpp"
 
 using namespace std;
 
