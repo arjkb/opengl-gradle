@@ -1,6 +1,5 @@
 #include <iostream>
 #include "greeting.hpp"
-
 #include "GL/glew.h"
 #include "GL/freeglut.h"
 
@@ -16,9 +15,9 @@ void drawSquare(const GLfloat SIDE) {
 }
 
 void display(void)  {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-    drawSquare(5.0f);
+    drawSquare(0.5);
     glFlush();
     glutSwapBuffers();
 }
@@ -28,7 +27,8 @@ int main(int argc, char *argv[])    {
 
     // setup OpenGL
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    glutInitContextFlags(GLUT_COMPATIBILITY_PROFILE);
     glutCreateWindow("Box");
     glutDisplayFunc(display);
     glutMainLoop();
